@@ -1,4 +1,4 @@
-const form = getElementById('form');
+const form = document.getElementById('form');
 
 /* Valida form se tiver só uma palavra */
 /* function validaForm(conta) {
