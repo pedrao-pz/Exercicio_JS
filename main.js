@@ -7,12 +7,12 @@ const form = document.getElementById('form');
 } */
 
 /* Quando clicar no submit, não vai recarregar a página */
-form.addEventListener('submit', function(e){
+form.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const numeroContaBeneficiario = document.getElementById('conta');
     const transfereBeneficiario = document.getElementById('transfere');
-    const mensagemSucesso = `${transfereBeneficiario.value} transferidos para a conta desejada.`;
+    const mensagemSucesso = `$${transfereBeneficiario.value} transferidos para a conta desejada.`;
 
     /*const contaBeneficiario = document.getElementById('conta');
     if !(validaForm(contaBeneficiario.value)){
@@ -20,17 +20,19 @@ form.addEventListener('submit', function(e){
     } else {
         alert('Tudo certo !');
     } */
-
-    if !(transfereBeneficiario > numeroContaBeneficiario){
-        alert('Impossível transferir a mais do que você tem na sua conta !')
+    
+    if (parseFloat(transfereBeneficiario.value) > parseFloat(numeroContaBeneficiario.value)) {
+        alert('Impossível transferir a mais do que você tem na sua conta!');
+        
+        
     } else {
-
         numeroContaBeneficiario.value = '';
         transfereBeneficiario.value = '';
-
+        
         alert(mensagemSucesso)
-    }
-}
-)
+    } 
+
+})
+
 
 console.log(form);
